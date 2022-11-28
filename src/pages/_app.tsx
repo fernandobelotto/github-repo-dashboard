@@ -6,6 +6,7 @@ import store from '../store'
 import theme from '../styles/theme'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+
   return (
     <Provider store={store}>
       <ChakraProvider theme={theme}>

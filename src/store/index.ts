@@ -3,12 +3,13 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 import counterReducer from "../features/counter/counterSlice";
 import { api } from "./api";
+import { filterReducer } from "./filter.slice";
 
 export function makeStore() {
   return configureStore({
     reducer: { 
       [api.reducerPath]: api.reducer,
-      counter: counterReducer,
+      filter : filterReducer,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(api.middleware),
